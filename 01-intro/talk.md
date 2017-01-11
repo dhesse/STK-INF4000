@@ -2,7 +2,9 @@
 % Selected topics in Data Science
 % Dr. Dirk Hesse
 
-# What is data science?
+# data science?
+
+![Jobs](img/Jobs.png)
 
 ---
 
@@ -69,13 +71,46 @@
 
 # Data Science
 
-![](img/Circles.png)
+![DS Venn Diagram](img/Circles.png)
 
+
+---
+
+# The Idea
+
+![Course Content](img/CirclesSTKINF.png)
 
 ---
 
 # Outline
 
+- Python for data analysis.
+    - A tour of python.
+    - Visualization.
+- Data sources.
+    - REST APIs.
+    - Public data sets.
+    - Web crawling.
+- More on python.
+    - Machine learning.
+    - Programming style.
+    - Testing your code.
+
+---
+
+
+# Outline (cont.)
+
+- Git and github.
+- Strategies for dealing with big data quantities.
+- Apache Spark.
+- Machine Learning in Spark with sample data sets.
+    - Regression.
+    - Data quality and features.
+    - Time series.
+    - Clustering.
+    - Frequent pattern mining.
+    - Anomaly detection.
 
 ---
 
