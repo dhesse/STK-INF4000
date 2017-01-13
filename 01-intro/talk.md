@@ -114,7 +114,48 @@
 
 ---
 
+# Course Mechanics
+
+- 3 lectures / week (Mondays, me).
+- 2 computer labs (Tuesdays, Håvard Kvamme).
+
+- Homework (voluntary).
+- Project work (mandatory).
+
+- Examination.
+    - Mid-term oral exam (**30%**).
+    - Final oral exam (**30%**).
+    - Final written exam (**40%**).
+
+---
+
+# The Project
+
+### Propose a project that involves
+
+- Ingesting data.
+- Processing data.
+- Making predictions.
+- Presenting the results.
+
+### And a motivation.
+
+- Who will use/buy it?
+
+---
+
 # Python For Data Science
+
+- Why Python?
+    - Easy to learn.
+    - Powerful.
+    - Widely spread.
+    - Lots of useful packages.
+- Why coding?
+    - Data science means a lot of coding.
+    - This code should be 'production grade'.
+        - Readable.
+        - Reliable.
 
 ---
 
@@ -123,7 +164,6 @@
 - Python
 - pip
 - virtualenv
-- git
 
 ---
 
@@ -132,19 +172,16 @@
     sudo apt install python
     sudo apt install python-pip
     pip install --upgrade pip
-    sudo apt install git
 
 ---
 
 # Mac
 
 - [install Homebrew (https://brew.sh)](https://brew.sh)
-- Add to ` ~/.profile` the line `export PATH=/usr/local/bin:/usr/local/sbin:$PATH`
 
 And then:
 
     brew install python
-    brew install git
 
 ---
 
@@ -152,86 +189,13 @@ And then:
     cd my_project
     virtualenv venv
     source venv/bin/activate
-    pip install matplotlib, jupyter, nbstripout
-    jupyter notebook
+    pip install matplotlib jupyter
+    jupyter notebookbu
     deactivate
 
 
 ---
 
-# Source Control
-
-- Version control.
-- Backup.
-- Bug tracking.
-- Progress tracking.
-- Collaboration.
-
----
-
-# Git
-
-    $ cd repo_dir
-    $ git init .
-    $ cat << EOF >> text_file.txt
-      heredoc> Here comes some text!
-      heredoc> EOF
-    $ git status
-    $ git add text_file.txt
-    $ git status
-    $ git commit -m "Initial commit."
-    $ git status
-    $ git log
-    $ nbstripout --install
-
----
-
 # Homework
 
-## Git
-
-- Make a [github account](https://github.com).
-    - Follow the instructions to [set up git][gsu].
-    - Follow the instructions to [make a repository][mkr].
-
-[gsu]: https://help.github.com/articles/set-up-git/
-[mkr]: https://help.github.com/articles/create-a-repo/
-
-## *BitBucket
-
-- Here, you have unlimited *private* repositories.
-- Make an account here as well.
-- Create a repository.
-
----
-
-# Homework
-
-## Python
-
-- Install `python`, `pip`, and `virtualenv`.
-- Create a project folder and a virtual environment.
-- Install `jupyter`, `matplotlib`, and `mbstripout`.
-    - Active `nbstriput`.
-- Head over to [google trends][gtr] and download a `.csv` file of a
-  search term of your choice.
-- Read the data in a notebook and make a plot.
-- Create a `README.md` file and include the plot in it.
-
----
-
-# Homework
-
-## *Peak detection
-
-- From the data, calculate 8- and 16-week averages and standard
-  deviations,
-    $$\mu_i^k = \frac {1}{k} \sum_{l = i - k/2 + 1}^{i + k/2} x_l,
-  \quad k \in \{8, 16\}$$
-    $$\sigma_i^k = \frac {1}{k} \sqrt{\sum_{l = i - k/2 + 1}^{i + k/2}
-  (x_l - \mu_i^k)^2}, \quad k\in\{8, 16\}$$
-- Define a threshold, e.g. $\varepsilon = 3.5$, identify those points
-  where $|x_j - \mu_i^k| > \varepsilon \sigma_i^k, \quad j \in {i -
-  k/2 + 1, \ldots, i + k/2}$. What can you say about those?
-
-[gtr]: https://google.com/trends
+[https://dhesse.github.io/STK-INF4000-hw/](https://dhesse.github.io/STK-INF4000-hw/)
