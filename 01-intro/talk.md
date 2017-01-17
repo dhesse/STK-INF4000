@@ -1,6 +1,6 @@
-% Welcome to STK-INF4000
+% Welcome to STK-INF3000/4000
 % Selected topics in Data Science
-% Dr. Dirk Hesse
+% Dirk Hesse
 
 # data science?
 
@@ -69,10 +69,22 @@
 
 ---
 
+# So, what does a data scientist do?
+
+- Talk to managers, try to understand the business.
+- Find room for improvements, new projects.
+- Use data to implement those.
+    - Plain statistics.
+    - Machine learning.
+    - Big data projects.
+    - Lots of coding.
+- Present findings, convince people to act on them.
+
+---
+
 # Data Science
 
 ![DS Venn Diagram](img/Circles.png)
-
 
 ---
 
@@ -82,17 +94,38 @@
 
 ---
 
+# (selected) Problem domains
+
+- Customer relationship management (CRM).
+    - Churn prediction.
+    - Case prioritization.
+    - Campaign optimization.
+- Fraud detection.
+    - Credit card fraud.
+    - Intrusion detection.
+- Recommender systems.
+- Non-profit/NGO.
+    - Disaster prediction/reaction optimization.
+    - Conflict analysis.
+- Online-ads.
+- Transportation.
+    - Route optimization.
+    - Traffic flow optimization.
+- **Many** more.
+
+---
+
 # Outline
 
 - Python for data analysis.
     - A tour of python.
     - Visualization.
-- Data sources.
+- Data from the web.
     - REST APIs.
-    - Public data sets.
-    - Web crawling.
+    - Crawling.
 - More on python.
-    - Machine learning.
+    - Numpy/scipy.
+    - Machine learning in `scikit-learn` (maybe).
     - Programming style.
     - Testing your code.
 
@@ -102,15 +135,18 @@
 # Outline (cont.)
 
 - Git and github.
+- Storing data (MongoDB and friends).
 - Strategies for dealing with big data quantities.
 - Apache Spark.
 - Machine Learning in Spark with sample data sets.
-    - Regression.
+    - Classification and regression.
     - Data quality and features.
     - Time series.
     - Clustering.
     - Frequent pattern mining.
     - Anomaly detection.
+    - Streaming data.
+- Publishing web data: Flask.
 
 ---
 
@@ -199,3 +235,10 @@ And then:
 # Homework
 
 [https://dhesse.github.io/STK-INF4000-hw/](https://dhesse.github.io/STK-INF4000-hw/)
+
+---
+
+# Slack - Page
+
+## STK-INF4000.slack.com
+
