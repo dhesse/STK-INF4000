@@ -12,43 +12,56 @@
 \newcommand{\fhat}{\hat{f}}
 \newcommand{\Var}{\operatorname{Var}}
 
+# Intro
+
+Basic idea: Some *data* collected and want to draw some *conclusions*
+about them. E.g.
+
+- Spam classification.
+- Search result ranking.
+- Sentiment analysis.
+- Predictive maintenance.
+
+Machine learning problems fall broadly into one of two
+categories:
+
+- Supervised Learning
+- Unsupervised Learning
+
+## Supervised Learning
+
+- Random variable $X = (X_1, \ldots, X_p)^T$.
+- Output variable $Y$ (usually *not* a vector, but could be) *or* $G$
+  (group, e.g. ${0, 1}$).
+- *Training examples* $(x_i, y_i), i = 1,\ldots,n$.
+- *Task:* Given a *value* for $X$, make a *good* prediction for $Y$,
+  denoted usually $\Yhat$.
+
+### Examples
+
+- Sentiment Analysis
+- Demand Prediction
+- Traffic Forecasting
+- Drought Forecasting.
+- Increasing Farm Yields.
+
+### What Can be Learned?
+
+- $Y$ *must* be dependent on $X$.
+- Dependence can be *very* complex.
+    - Deep learning.
+
+## Unsupervised Learning
+
+No $Y$ given. Just interested in properties of $X$.
+
+### Examples
+
+- Grouping Things
+- Recommendation
+- Outlier Detection
+
 # Basic Probability
-
-## Formal Definitions
-
-- Sample space $\Omega$
-- Outcome $\omega \in \Omega$
-- Event $A \subseteq \Omega$
-- $\sigma$-Algebra $\cA$
-- Probability distribution $\P$
-    - $\P[A] \geq 0 \quad \forall A$
-    - $\P[\Omega] = 1$
-    - $\P\left[\bigcup_i A_i\right] = \sum_i \P[A_i]$
-- Conditional probability $\P[A | B] = \frac {\P[A \cap B]} {\P[B]}$,
-  if $\P[B] > 0$.
-
-## Conditional Probability
-
-Study, 60% women, 40% men. High, low income.
-
-        Female   Male
------- -------- ------ ------
- High     9%      11%    20%
- Low     46%      34%    80%
------- -------- ------ ------
-         55%      45%
-
-0.09, 0.11, 0.46, and 0.34 are called *joint* probabilities, while
-0.55, 0.45, 0.2, and 0.8 are called *marginal* probabilities. The
-*conditional* probability $\P(High|Female)$ can be calculated using
-the formula
-
-$$\P(x|y) = \frac{\P(x,y)}{\P(y)}$$
-
-Here, $\P(High|Female) \approx 16\%$, while $\P(High|Male) \approx
-24\%$.
-
-
 
 ## Random Variables
 
@@ -65,9 +78,38 @@ Here, $\P(High|Female) \approx 16\%$, while $\P(High|Male) \approx
 
 ## Expectation Values
 
+### Discrete
 
+$$\E[X] = \sum_x x p_X(x)$$
 
-# Decision Theory
+$$\E[f(X)] = \sum_x f(x) p_X(x)$$
+
+### Continuous
+
+$$\E[X] = \int x p_X(x) dx$$
+
+## Conditional Probability
+
+Study, 60% women, 40% men. High, low income.
+
+        Female   Male
+------ -------- ------ ------
+ High     9%      11%    20%
+ Low     46%      34%    80%
+         55%      45%
+------ -------- ------ ------
+
+0.09, 0.11, 0.46, and 0.34 are called *joint* probabilities, while
+0.55, 0.45, 0.2, and 0.8 are called *marginal* probabilities. The
+*conditional* probability $\P(High|Female)$ can be calculated using
+the formula
+
+$$\P(x|y) = \frac{\P(x,y)}{\P(y)}$$
+
+Here, $\P(High|Female) \approx 16\%$, while $\P(High|Male) \approx
+24\%$.
+
+# Decision Theory - Supervised Learning
 
 We have
 
@@ -120,3 +162,19 @@ $$\fhat(x) = \frac 1 k \sum_{z \in N_k(x)}{z}\,,$$
 
 where $N_k(x)$ are the $k$ closest training examples to $x$ from a
 given training set.
+
+
+# Appendix
+
+## Formal Definitions
+
+- Sample space $\Omega$
+- Outcome $\omega \in \Omega$
+- Event $A \subseteq \Omega$
+- $\sigma$-Algebra $\cA$
+- Probability distribution $\P$
+    - $\P[A] \geq 0 \quad \forall A$
+    - $\P[\Omega] = 1$
+    - $\P\left[\bigcup_i A_i\right] = \sum_i \P[A_i]$
+- Conditional probability $\P[A | B] = \frac {\P[A \cap B]} {\P[B]}$,
+  if $\P[B] > 0$.
