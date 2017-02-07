@@ -62,11 +62,11 @@ numbers of links clicked during a visit of a specific user.
 # Types of Data
 
 - Continuous
-   - E.g. height, CO2 concentration.
+    - E.g. height, CO2 concentration.
 - Categorical
-   - Spam (yes or no), color.
+    - Spam (yes or no), color.
 - Ordered categorical
-   - High, medium, low.
+    - High, medium, low.
 
 ---
 
@@ -99,7 +99,7 @@ numbers of links clicked during a visit of a specific user.
 # Probability distributions
 
 - Discrete case:
-    - Probability mass function, PMF: $P[X]$
+    - Probability mass function, PMF: $\P[X]$
     - Example: $P[heads] = 0.5$.
 - Continuous case:
     - Probability density function, PDF: $p(x)$
@@ -110,9 +110,9 @@ numbers of links clicked during a visit of a specific user.
 
 ### Discrete case
 
-$$E[X] = \sum_x x\, P[X = x]$$
+$$\E[X] = \sum_x x\, \P[X = x]$$
 
-$$E[f(X)] = \sum_x f(x)\, P[X = x] \neq f(E[X])$$
+$$\E[f(X)] = \sum_x f(x)\, \P[X = x] \neq f(\E[X])$$
 
 ---
 
@@ -120,8 +120,8 @@ $$E[f(X)] = \sum_x f(x)\, P[X = x] \neq f(E[X])$$
 
 ### Continuous case
 
-$$E[X] = \int x \,p(x) \mathrm{d} x$$
-$$E[f(X)] = \int f(x)\, p(x) \mathrm{d} x \neq f(E[X])$$
+$$\E[X] = \int x \,p(x) \mathrm{d} x$$
+$$\E[f(X)] = \int f(x)\, p(x) \mathrm{d} x \neq f(\E[X])$$
  
 ---
 
@@ -129,12 +129,16 @@ $$E[f(X)] = \int f(x)\, p(x) \mathrm{d} x \neq f(E[X])$$
 
 ---
 
+# Discrete Distributions
+
+---
+
 # Binomial
 
-$$\mathrm P[x = k|\theta] = \binom{N}{k} \theta^k (1 - \theta)^{N -
+$$\mathrm \P[X = k|\theta] = \binom{N}{k} \theta^k (1 - \theta)^{N -
 k}$$
 
-- Email is spam with probability $\theta$, then $P[x = k|\theta]$ is
+- Email is spam with probability $\theta$, then $\P[X = k|\theta]$ is
   the probability of having $k$ out of $N$ emails spam.
 - Production errors.
 - Click rate.
@@ -148,9 +152,9 @@ k}$$
 
 # Poisson
 
-$$\mathrm P[X = k|\lambda] = \frac {\lambda^k e^{-\lambda}}{k!}$$
+$$\mathrm \P[X = k|\lambda] = \frac {\lambda^k e^{-\lambda}}{k!}$$
 
-- Events ouccuring at a rate $\lambda$.
+- Events occurring at a rate $\lambda$.
 - Radioactive decays.
 - Cars arriving at intersection.
 - Number of network packets arriving.
@@ -158,6 +162,10 @@ $$\mathrm P[X = k|\lambda] = \frac {\lambda^k e^{-\lambda}}{k!}$$
 ---
 
 ![](img/poisson.png)
+
+---
+
+# Continuous distributions
 
 ---
 
@@ -297,3 +305,16 @@ $$\fhat(x) = \frac 1 k \sum_{z \in N_k(x)}{z}\,,$$
 
 where $N_k(x)$ are the $k$ closest training examples to $x$ from a
 given training set.
+
+
+---
+
+# What about other Loss functions?
+
+$$L(Y, f(X)) = |Y - f(X)|$$
+
+leads to
+
+$$f(x) = \operatorname{median}[Y | X = x]$$
+
+Other choices are possible!
