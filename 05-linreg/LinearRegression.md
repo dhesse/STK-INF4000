@@ -229,6 +229,7 @@ $k$ the one with *lowest* RSS.
 
 - Add penalty for large numerical values for parameters $\theta$.
 - Will reduce those not very important in model.
+- Usually set $\theta_0 = \hat y$ and center and scale $X_i$.
 
 $$\hat \theta = \underset{\theta}{\operatorname{argmin}}
 \left[\sum_i \left(y_i - f_\theta(x_i)\right)^2 + \operatorname{P}(\theta)\right]$$
@@ -253,6 +254,10 @@ $$P(\theta) = \lambda \sum_{i = 1}^p \theta_i^2$$
 
 ---
 
+![](img/ridge.png)
+
+---
+
 ## Lasso
 
 $$P(\theta) = \lambda \sum_{i = 1}^p |\theta_i|$$
@@ -263,7 +268,17 @@ $$P(\theta) = \lambda \sum_{i = 1}^p |\theta_i|$$
 
 ---
 
+![](img/lasso.png)
+
+---
+
 ## Elastic Net
 
 $$P(\theta) = \lambda \sum_{i = 1}^p \left[ \alpha \theta_i^2 +
 (1-\alpha) |\theta_i|\right]$$
+
+- Combines ridge & lasso.
+
+---
+
+![](img/elnet.png)

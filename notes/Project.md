@@ -85,4 +85,42 @@ This is because you should acquire *some* "business acumen".
 
 ---
 
+# Mid-term assignment (oral/written)
+
+- *Preliminary* date: April 3rd.
+ - You should have a working proof of concept (POC).
+ - All components should be there, i.e.
+     - Business case.
+     - Data ingestion.
+     - Data processing.
+     - Machine Learning.
+ - Doesn't have to be production ready.
+ - This is *mainly* to make sure you're on the right track.
+
+---
+
+# Final assignment (oral/written)
+
+- Date will (probably) be set by UiO.
+- Production ready product.
+- Testing and monitoring in place.
+- Basically taking the POC one step further.
+    - Combine your data with a new source.
+    - Try better ML methods.
+    - Do some more tuning.
+    - Get monitoring in place.
+
+---
+
+# Written exam 
+
+- Date will be set by UiO.
+- Will be relatively short.
+- Technical aspects of course.
+    - Python, APIs, packages.
+    - Some applied ML theory.
+- We'll have a review session.
+
+---
+
 # Questions?
