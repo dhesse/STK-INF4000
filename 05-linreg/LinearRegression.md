@@ -139,7 +139,7 @@ $$\hat \sigma^2 = \frac{1}{N-p-1}\sum_{i=1}^{N} (y_i - \hat y_i)^2\,.$$
 $$z_j = \frac{\hat \theta_j}{\hat\sigma \sqrt{v_j}}$$
 
 with $v = \operatorname{diag}(\mathbf{X}^T\mathbf{X})^{-1}$ is under
-the *null hypothesis* $\beta_j = 0$ distributed as a $t$-distribution
+the *null hypothesis* $\theta_j = 0$ distributed as a $t$-distribution
 with $N-p-1$ degrees of freedom.
 
 ---
@@ -272,12 +272,25 @@ $$P(\theta) = \lambda \sum_{i = 1}^p |\theta_i|$$
 
 ---
 
+## What about DOF?
+
+$$\operatorname{df}(\hat y) = \frac 1 {\sigma^2} \sum_{i=1}^N
+\operatorname{Cov}(\hat y_i, y_i)$$
+
+- Works out as seen in ridge regression.
+- Lasso: $\operatorname{df}$ is approx. the number of non-zero
+  coefficients in model.
+- Subset selection: Needs to be simulated.
+
+---
+
 ## Elastic Net
 
 $$P(\theta) = \lambda \sum_{i = 1}^p \left[ \alpha \theta_i^2 +
 (1-\alpha) |\theta_i|\right]$$
 
 - Combines ridge & lasso.
+- Sets coefficients to zero, yet easy to handle numerically.
 
 ---
 
