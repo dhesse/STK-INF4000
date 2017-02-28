@@ -2,3 +2,4 @@ nbhome/.ipynb_checkpoints/*
 *.pyc
 
 nbhome/donthackme.py
+nbhome/metastore_db
