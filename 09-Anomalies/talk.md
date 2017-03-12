@@ -57,6 +57,9 @@
     - Cases of fraud might be unknown.
     - Or too rare to make a good predictor.
 - Try to make sense of the $x_i$.
+    - Usually means finding an approximation of $p(X = x)$ given the
+      training data.
+    - Gives a measure how improbable the observation is.
 
 ---
 
@@ -78,11 +81,23 @@
 - Calculate the mean $\overline x = \frac 1 N \sum_i x_i$.
 - Calculate the standard deviation $\sigma = \sqrt{\frac{1}{N} \sum_i (x_i - \overline x)^2}$
 - Calculate the z-value $z_i = (x_i - \overline x) / \sigma$.
+- Flag everything with $z > z_\mbox{max}$ as anomaly.
+
+---
+
+## Chebyshev's inequality
+
+- Valid for a wide variety of *probability distributions*.
+- Statement:
+  $$Pr(|X - \mu| \geq k \sigma) \leq \frac 1 {k^2}$$
+- I.e. looking at $z$ values for anomaly detection makes sense.
 
 ---
 
 ## Sigmas and Probabilities
 
+
+For the normal distribution:
 
 Threshold  Fraction Outside
 ---------  ----------------
@@ -91,6 +106,18 @@ Threshold  Fraction Outside
 5$\sigma$  1 / 1 744 278
 6$\sigma$  1 / 506 797 346
 ---------  ----------------
+
+---
+
+### Chebyshev guarantees
+
+
+Threshold  Percent Outside
+---------  ----------------
+3$\sigma$    11.1111%
+4$\sigma$    6.25%
+5$\sigma$    4%
+6$\sigma$    2.7778%
 
 ---
 
