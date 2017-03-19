@@ -225,7 +225,7 @@ Flag everything with $f(x) < \epsilon$ as anomaly.
 
 - Given clustering with $k$ cluster centers $\mu_l$.
 - Assign each $x_i$ a cluster $C(x_i)$, such that
-  $$C(x_i) = \operatorname{argmax} \|x_i - \mu_{C(x_i)}\|$$
+  $$C(x_i) = \underset{l}{\operatorname{argmin}} \|x_i - \mu_l\|$$
 - For agglomerative clustering we'll often have the $C(x_i)$ first and
   calculate
   $$\mu_l = \frac 1 {N_l} \sum_{i; C(x_i) = l}x_i$$
@@ -274,7 +274,7 @@ Flag everything with $f(x) < \epsilon$ as anomaly.
 - Start with $k$ *random* cluster means $\mu_l$.
 - Given the data $x_i$, calculate new cluster centers, again using
   $$\begin{align}
-      C(x_i) &= \operatorname{argmax} \|x_i - \mu_{C(x_i)}\|\\
+  C(x_i) &= \underset{l}{\operatorname{argmin}} \|x_i - \mu_l\|\\
   \mu_l' &= \frac 1 {N_l} \sum_{i; C(x_i) = l}x_i\end{align}$$
 - Iterate until the assignment stops changing.
 

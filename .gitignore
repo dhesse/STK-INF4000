@@ -3,3 +3,7 @@ nbhome/.ipynb_checkpoints/*
 
 nbhome/donthackme.py
 nbhome/metastore_db
+.ipynb_*
+derby.log
+metastore_db
+
