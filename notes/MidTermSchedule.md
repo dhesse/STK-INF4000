@@ -1,0 +1,42 @@
+% STK-INF 4000 - Midterm presentation schedule
+% Version 1.0
+
+- 9:00 - 9:30
+    - Emmanuel Coffie
+- 9:30 - 10:00
+    - Øyvind Indrebø
+    - Lars Erlend Leganger
+- 10:00 - 10:30
+    - André Sevaldsen Douzette,
+    - Kristofer Munsterhjelm,
+    - Joël Fomete and
+    - Maria Hjelset Barbosa
+- 10:30 - 11:00
+    - Anne Martine Myking
+    - Lisa Li
+- 11:00 - 11:30
+    - Maria Kalitina
+    - Matias Hermanrud Fjeld
+    - Wanjuan Ren
+- 11:30 - 12:00
+    - Susanne Tande
+    - Morten Madshus
+    - Simon Brant
+    - Knut Ringnes
+- 12:00 - 12:30
+    - Chi Zhang, 
+    - Wei Liu, 
+    - Felix Schweinfest,
+    - Harjeet Harpal, 
+    - Fransis Kolstø, 
+- 12:30 - 13:00
+    - Sylvia Qinghua Liu
+    - Vegard Stikbakke
+    - Tor-Håkon Hellebostad
+- 13:30 - 14:00
+    - Maryam Zolghadr
+- 14:00 - 14:30
+    - Børge S. Andreassen
+    - Daniel Osen
+    - Øyvind Gylver
+    - Marie Lilleborge
