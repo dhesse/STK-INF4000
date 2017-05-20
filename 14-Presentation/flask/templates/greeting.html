@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+
+    {% if name %}
+    <h1>Hello, {{name}}!</h1>
+    {% else %}
+    <h1>Hello, Human!</h1>
+    {% endif %}
+    <ul>
+    {% for item in session.navigation %}
+    <li><a href="{{ item.href }}">{{ item.caption }}</a></li>
+    {% endfor %}
+    <li><a href='{{ url_for('get_page', user=name) }}'>Here</a></li>
+    </ul>
+
+</body>
+</html>
