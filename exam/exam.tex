@@ -1,0 +1,158 @@
+\documentclass[a4paper,11pt,english,plainsub]{uioexam}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel,textcomp}
+\usepackage{amsmath,amsfonts} 
+\usepackage{graphics}
+\usepackage{listings}
+
+\newcommand{\ttc}[1]{\choice {\tt #1}}
+
+\emne{STK-INF3000/4000}{Selected topics in data science}
+\dato{June 13, 2016}
+\tid{14.30}{18.30}
+\hjelpemidler{\begin{tabular}[t]{@{}l}Calculator\\
+\end{tabular}}
+
+\begin{document}
+
+\tableofcontents
+
+\bigskip
+
+%\begin{flushright}
+%\sc Kandidatnr. \ \underline{\hspace*{2cm}}
+%\end{flushright}
+
+%\begin{flushright}
+%\sc Candidate no:\ \underline{\hspace*{2cm}}
+%\end{flushright}
+
+
+\oppgave{Python}
+
+\deloppgave{Lists}
+
+What will be the output of the python code listed below?
+
+\begin{lstlisting}[language=Python]
+print range(10)[1:5]  
+\end{lstlisting}
+
+\begin{choicelist}
+  \choice {\tt [1, 2, 3, 4, 5]}
+  \choice {\tt [0, 1, 2, 3, 4, 5]}
+  \choice {\tt [1, 2, 3, 4]}
+  \choice {\tt [0, 1, 2, 3, 4]}
+\end{choicelist}
+
+\deloppgave{Dictionaries}
+
+What will be the output of the python code listed below?
+
+\begin{lstlisting}[language=Python]
+print {i: i**2 for i in range(10) if i % 2}
+\end{lstlisting}
+
+\begin{choicelist}
+  \choice {\tt [1, 9, 25, 49, 81]}
+  \choice {\tt {1: 1, 3: 9, 5: 25, 7: 49, 9: 81}}
+  \choice {\tt {0: 0, 8: 64, 2: 4, 4: 16, 6: 36}}
+  \choice {\tt {1: 1, 3: 9, 5: 25, 7: 49}}
+\end{choicelist}
+
+\oppgave{Data Processing}
+
+\deloppgave{Data Frame Transformation}
+
+Given a {\tt pandas} data frame {\tt a}, given by
+
+\begin{verbatim}
+  category label  value
+0     high     a      0
+1      low     b      1
+2     high     c      2
+3      low     a      3
+4     high     b      4
+5      low     c      5
+\end{verbatim}
+
+what command can be used to transform it into the following form?
+
+\begin{verbatim}
+category  high  low
+label
+a            0    3
+b            4    1
+c            2    5
+\end{verbatim}
+
+\begin{choicelist}
+  \choice {\tt a.stack}
+  \choice {\tt a.groupby}
+  \choice {\tt a.pivot}
+\end{choicelist}
+
+\deloppgave{Data Frame Transformation}
+
+Given a {\tt pandas} data frame {\tt a}, given by
+
+\begin{verbatim}
+  category label  value
+0     high     a      0
+1      low     b      1
+2     high     c      2
+3      low     a      3
+4     high     b      4
+5      low     c      5
+\end{verbatim}
+
+what command can be used to transform it into the following form?
+
+\begin{verbatim}
+          value
+category
+high          6
+low           9
+\end{verbatim}
+
+\begin{choicelist}
+  \choice {\tt a.stack}
+  \choice {\tt a.groupby}
+  \choice {\tt a.pivot}
+\end{choicelist}
+
+\oppgave{Apache Spark}
+
+What output will the following Apache Spark code produce (a Spark
+Context is assumed to exist as {\tt sc}).
+
+\begin{lstlisting}[language=Python]
+  print (sc
+    .parallelize(range(10))
+    .map(lambda x: [x % 2, x])
+    .reduceByKey(lambda x, y: x + y)
+    .collect())
+\end{lstlisting}
+
+\begin{choicelist}
+  \ttc{[(0, 20), (1, 20)]}
+  \ttc{[(0, 20), (1, 25)]}
+  \ttc{[(0, 10), (1, 15), (3, 10)]}
+\end{choicelist}
+
+\oppgave{Machine learning}
+
+\deloppgave{Decision trees}
+
+Which of the following statements about decision trees hold true?
+
+\begin{choicelist}
+  \choice Trees of very low depth tend to show high bias.
+  \choice Variable importance can be estimated from the  splitting
+  points chosen by the algorithm and resulting information gain.
+  \choice Trees of excessive depth tend to show high variance.
+\end{choicelist}
+
+
+\end{document}
