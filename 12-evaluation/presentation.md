@@ -42,7 +42,7 @@ $\newcommand{E}[1]{\operatorname{E}\left[#1\right]}
 
 ## Overfitting - Worst Case
 
-![](../10-Trees/img/tree_depth_train_test.png)
+![](img/tree_depth_train_test.png)
 
 ---
 
@@ -52,7 +52,7 @@ $\newcommand{E}[1]{\operatorname{E}\left[#1\right]}
 
 ---
 
-## Training Error
+## Test Error
 
 $$\Err_\CT = \E{\L(Y, \hat f(X))| \CT}.$$
 
@@ -153,7 +153,7 @@ The *optimism* is $\operatorname{op} = \Err_\mathrm{in}$.
 ## A Closer Look at the Generalization Error
 
 $$\begin{align}
-\Eo_y[\Err_\mathrm{in}] &= \Eo_y [\err] + \frac 2 N \sum_{i=0}^N
+\Eo_y[\Err_\mathrm{in}] &= \Eo_y [\err] + \frac 2 N \sum_{i=1}^N
 \operatorname{Cov}(\hat y_i, y_i)\\
 &\overset{Y = f(X) + \epsilon}= \Eo_y [\err] + 2 \frac d N \sigma_\epsilon^2.
 \end{align}$$
@@ -203,7 +203,7 @@ How to get $d(\alpha)$?
 	- $K$ fits, s.t. $f^{-k}$ is fitted **without** the points $x_i,
       y_i$ where $\kappa(i) = k$.
 
-$$\operatorname{CV}(\hat f) = \frac 1 N \sum_{i = 0}^N \L (y_i, \hat f^{-\kappa(i)}(x_i)).$$
+$$\operatorname{CV}(\hat f) = \frac 1 N \sum_{i = 1}^N \L (y_i, \hat f^{-\kappa(i)}(x_i)).$$
 
 
 ---
@@ -232,6 +232,115 @@ and needed.
 - Generate $B$ new training sets $Z^{*b}$ of size $N$.
     - By sampling with replacement from $Z$.
 - One can now estimate any aspect of the distr. of $S(Z)$
-    - E.g. $\operatorname{Var}[S(Z)] = \frac 1 {B - 1} \sum_{b=1}^B
+    - E.g. $\widehat{\operatorname{Var}}[S(Z)] = \frac 1 {B - 1} \sum_{b=1}^B
       \left(S(Z^{*b}) - \overline S^*\right)^2$.
 	- Where $\overline S^* = \frac 1 B \sum_b S(Z^{*b})$.
+
+---
+
+## The Danger of BS
+
+$$\widehat {\Err}_\mathrm{boot} = \frac 1 B \frac 1 N \sum_{b=1}^B
+\sum_{i=1}^N \L(y_i, \hat f^{*b}(x_i)).$$
+
+Tends to **underestimate** generalization error. This is because
+
+$$\operatorname{Pr}(\mbox{obs.} i \in \mbox{BS sample b}) = 1 - (1 -
+\frac 1 N)^N \approx 1 - e^{-1} \approx 0.632$$
+
+Alternative: Out-of-sample error.
+
+---
+
+## Why Bootstrap?
+
+- Estimation of errors on model parameters.
+- Very general-purpose tool.
+- Smoothing distributions.
+- Deriving confidence intervals in general.
+- Not without pitfalls!
+
+---
+
+## Bagging
+
+Idea: Combine noisy, but unbiased estimators to increase stability.
+
+$$\hat f_\mathrm{bag} = \frac 1 B \sum_b \hat f^{*b}(X).$$
+
+`scikit-learn` has built-in methods for this.
+
+---
+
+## Some Words on Bagging
+
+- In most situations $\hat f_\mathrm{bag} \overset{B \to
+  \infty}\longrightarrow \hat f(X)$.
+- Used with trees, we have often different features in the trees.
+- Pooling often increases performance.
+- Pooled probabilities very useful.
+- 0-1 predictors **can not** be pooled to give probabilities!
+    - E.g. true $p = 0.75$, $\hat f^{*1}(x) = 1$, $\hat f^{*2}(x) =
+      1$.
+
+---
+
+## The case for Bagging
+
+One can show that in most cases
+
+$$\Eo_\mathcal{P} \left[Y-\hat f ^{*}(x)\right]^2 \geq 
+\Eo_\mathcal{P} \left[Y - \Eo_\mathcal{P} \hat f^*(x)\right]^2.$$
+
+This is not true e.g. for 0-1 loss.
+
+- Bagging works great to stabilize unstable models, e.g. trees.
+- At the cost of interpretability.
+
+---
+
+## Random Forests
+
+- Average over $B$ i.i.d. random variables w. variacne $\sigma^2$.
+    - Resulting variance: $\frac 1 B \sigma^2$.
+- Average over $B$ i.d. random variables w. variacne $\sigma^2$.
+    - Resulting variance: $\rho \sigma^2 + \frac {1 - \rho} B
+      \sigma^2$.
+	- $\rho$: Pairwise correlation of random variables.
+- Bagged models often correlated.
+- Idea: Reduce correlation.
+    - Don't use all variables in the splits.
+
+---
+
+## Recipe
+
+1. For $b = 1, \ldots, B$:
+    - Draw BS sample $Z^*$.
+	- Grow tree $T_b$.
+	    - At each step, only use $m \leq p$ variables.
+2. Output the resulting ensemble.
+
+Regression:
+
+$$\hat f (x) = \frac 1 B \sum_b T_b(x).$$
+
+Classification:
+
+$$\hat C (x) = \mbox{majority vote} {C_b(x)}.$$
+
+---
+
+## More About Random Forests
+
+- Can use out-of-bag samples to estimate prediction error.
+    - Almost identical to cross-validation error.
+- Can measure improvement in split criterion at each split.
+    - This gives an estimate for feature importance.
+	- Can combine this with OOB.
+- They do prevent over-fitting to some degree, but are no silver
+  bullet.
+
+---
+
+# Questions?

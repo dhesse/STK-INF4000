@@ -7,3 +7,4 @@ nbhome/metastore_db
 derby.log
 metastore_db
 
+.DS_Store

@@ -79,7 +79,7 @@ Source: [http://martin.zinkevich.org/rules_of_ml/rules_of_ml.pdf](http://martin.
 ## Phase 2: Feature Engineering
 
 - Plan for iterations.
-    - Don't be afraid to launch a model that's good enough.
+    - Don't be afraid to launch a model that's *just* good enough.
     - Don't be afraid to spend a little time on a model.
 - Don't start out with learned features.
     - E.g. clustering, deep learning.
@@ -129,11 +129,11 @@ Source: [http://martin.zinkevich.org/rules_of_ml/rules_of_ml.pdf](http://martin.
 
 ## Training Serving Skew
 
-- Chose test data for time series data with care!
+- Choose test data for time series data with care!
     - Don't just leave data out randomly.
 - Take care when using binary classification for filtering.
     - False positives can't be used for training straight-forwardly.
-    - Better: Hold out e.g. 1% of data an let it pass.
+    - Better: Hold out e.g. 1% of data an let it all pass.
 - Ranking = Skew
 - Beware of feedback.
     - E.g. higher rank $\rightarrow$ more clicks.
@@ -249,7 +249,7 @@ Source: [http://martin.zinkevich.org/rules_of_ml/rules_of_ml.pdf](http://martin.
 # Machine Learning
 
 - Intro
-    - Data, input target.
+    - Data, input, target.
     - Learning task
     - Types of data
     - Supervised & Unsupervised learning
@@ -373,6 +373,7 @@ Source: [http://martin.zinkevich.org/rules_of_ml/rules_of_ml.pdf](http://martin.
 - Data frames.
     - Collecting features.
     - Exporting to pandas.
+- Clustering in Spark ML
 
 ---
 
@@ -403,18 +404,11 @@ Source: [http://martin.zinkevich.org/rules_of_ml/rules_of_ml.pdf](http://martin.
         - Binomial: $\log(1 + \exp(-2fy))$.
         - Squared error: $(y - f)^2$.
     - Regression
-  	  - Squared error, $(f(x) - y)^2$.
+  	    - Squared error, $(f(x) - y)^2$.
         - Absolute error, $|f(x) - y|$.
         - Huber loss, $$L(f(x), y) = \begin{cases} (y-f(x))^2 &\mbox{if } |y -
                 f(x)| \leq \delta\\ 2\delta|y- f(x)| -
                 \delta^2&\mbox{else.}\end{cases}$$ 
-
----
-
-# Time series
-
-- ARMA models.
-- For outlier detection.
 
 ---
 
@@ -425,6 +419,13 @@ Source: [http://martin.zinkevich.org/rules_of_ml/rules_of_ml.pdf](http://martin.
 - Advantages:
     - Can use most loss functions.
     - Can use regularization.
+
+---
+
+# Time series
+
+- ARMA models.
+- For outlier detection.
 
 ---
 
@@ -455,7 +456,7 @@ Source: [http://martin.zinkevich.org/rules_of_ml/rules_of_ml.pdf](http://martin.
 
 ---
 
-# NLP Excursion
+# NLP Field Trip
 
 - Types of NLP tasks.
 - Regular expressions.
@@ -469,7 +470,6 @@ Source: [http://martin.zinkevich.org/rules_of_ml/rules_of_ml.pdf](http://martin.
     - Calculating N-Gram probabilities.
 - Text classification.
     - Naïve Bayes.
-
 
 ---
 
@@ -497,9 +497,42 @@ Source: [http://martin.zinkevich.org/rules_of_ml/rules_of_ml.pdf](http://martin.
 
 ---
 
+# The Cloud
+
+- AWS
+- Google Cloud
+- Azure
+- Bluemix
+
+---
+
+# Where to go From Here?
+
+- NLP
+- Deep Learning
+- Machine Learning
+- Summer Jobs
+- Master Thesis in Industry
+
+---
+
 # Final Presentation
 
-- Focus on Practical issues.
+- Don't forget an introduction!
+    - What's your goal?
+	- What's the main idea?
+- Have you solved you original problem?
+    - If not, where are you?
+	- Is this enough for some intermediate goal?
+- Practical issues.
     - Pipelines.
     - Will you need to scale (Spark)?
 - Show what you've done since last time.
+
+---
+
+# Your feedback
+
+[http://tinyurl.com/STKINF](http://tinyurl.com/STKINF)
+
+[https://goo.gl/forms/vSRMO7MxTABx1Siy1](https://goo.gl/forms/vSRMO7MxTABx1Siy1)

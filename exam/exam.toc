@@ -1,0 +1,26 @@
+\select@language {english}
+\contentsline {section}{\numberline {1}Python}{1}
+\contentsline {subsection}{\numberline {a}Lists}{1}
+\contentsline {subsection}{\numberline {b}Lists}{1}
+\contentsline {subsection}{\numberline {c}Dictionaries}{2}
+\contentsline {section}{\numberline {2}Data Processing}{2}
+\contentsline {subsection}{\numberline {a}Data Frame Transformation}{2}
+\contentsline {subsection}{\numberline {b}Data Frame Transformation}{2}
+\contentsline {section}{\numberline {3}Apache Spark}{3}
+\contentsline {subsection}{\numberline {a}Map and reduce}{3}
+\contentsline {subsection}{\numberline {b}Filter}{3}
+\contentsline {section}{\numberline {4}Computers, Storage, and Communication}{3}
+\contentsline {subsection}{\numberline {a}Latencies}{3}
+\contentsline {subsection}{\numberline {b}MongoDB}{4}
+\contentsline {subsection}{\numberline {c}REST APIs}{4}
+\contentsline {section}{\numberline {5}Machine learning}{4}
+\contentsline {subsection}{\numberline {a}Decision trees}{4}
+\contentsline {subsection}{\numberline {b}Decision trees}{4}
+\contentsline {subsection}{\numberline {c}Gradient boosting}{4}
+\contentsline {subsection}{\numberline {d}Cross-validation}{4}
+\contentsline {subsection}{\numberline {e}Variable Selection}{5}
+\contentsline {subsection}{\numberline {f}K-Means}{5}
+\contentsline {subsection}{\numberline {g}Logistic Regression}{5}
+\contentsline {subsection}{\numberline {h}Classification}{6}
+\contentsline {subsection}{\numberline {i}Classification}{6}
+\contentsline {subsection}{\numberline {j}Anomaly Detection}{6}
